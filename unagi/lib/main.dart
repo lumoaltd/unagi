@@ -99,10 +99,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
-        body: Container(
-          color: Colors.black,
-          child: const Center(
-            child: Text("Wave"),
+        body: Center(
+          child: CustomPaint(
+            size: Size(300, 300),
+            painter: MyPainter(),
           ),
         ),
         bottomNavigationBar: BottomAppBar(
@@ -116,6 +116,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     size: 38,
                     color: Colors.white,
                   ),
+                  Text(
+                    "WAVES",
+                    style: TextStyle(color: Colors.white),
+                  ),
                   Icon(
                     UniconsLine.angle_right_b,
                     size: 38,
@@ -125,5 +129,18 @@ class _MyHomePageState extends State<MyHomePage> {
               )),
           color: Colors.blueGrey[800],
         ));
+  }
+}
+
+class MyPainter extends CustomPainter {
+  //         <-- CustomPainter class
+  @override
+  void paint(Canvas canvas, Size size) {
+    //                                             <-- Insert your painting code here.
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter old) {
+    return false;
   }
 }
