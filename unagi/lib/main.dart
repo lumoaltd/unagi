@@ -1,3 +1,5 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
 
@@ -72,66 +74,56 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blueGrey[800],
-        leading: Icon(
-          UniconsLine.cog,
-          size: 38,
-        ),
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        actions: [
-          Container(
-            width: 40,
-            child: Icon(
-              UniconsLine.stop_circle,
-              size: 38,
-            ),
+        appBar: AppBar(
+          backgroundColor: Colors.blueGrey[800],
+          leading: const Icon(
+            UniconsLine.cog,
+            size: 38,
           ),
-          Container(
-            width: 40,
-            child: Icon(
-              UniconsLine.play_circle,
-              size: 38,
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          actions: [
+            Container(
+              width: 40,
+              child: const Icon(
+                UniconsLine.stop_circle,
+                size: 38,
+              ),
             ),
-          ),
-        ],
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            Container(
+              width: 40,
+              child: const Icon(
+                UniconsLine.play_circle,
+                size: 38,
+              ),
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        body: Container(
+          color: Colors.black,
+          child: const Center(
+            child: Text("Wave"),
+          ),
+        ),
+        bottomNavigationBar: BottomAppBar(
+          child: Container(
+              height: 70,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Icon(
+                    UniconsLine.angle_left_b,
+                    size: 38,
+                    color: Colors.white,
+                  ),
+                  Icon(
+                    UniconsLine.angle_right_b,
+                    size: 38,
+                    color: Colors.white,
+                  ),
+                ],
+              )),
+          color: Colors.blueGrey[800],
+        ));
   }
 }
