@@ -1,6 +1,7 @@
 // ignore_for_file: sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:unicons/unicons.dart';
 
 void main() {
@@ -13,8 +14,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    final goRouter = GoRouter(
+      initialLocation: '/',
+      debugLogDiagnostics: true,
+      routes: [
+        GoRoute(
+          path: '/',
+          builder: (context, state) =>
+              const MyHomePage(title: 'Flutter Demo Home Page'),
+        ),
+      ],
+    );
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
+      routerConfig: goRouter,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -28,7 +41,6 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blueGrey,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -101,11 +113,12 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: Center(
           child: CustomPaint(
-            size: Size(300, 300),
+            size: const Size(300, 300),
             painter: MyPainter(),
           ),
         ),
         bottomNavigationBar: BottomAppBar(
+          color: Colors.blueGrey[800],
           child: Container(
               height: 70,
               child: Row(
@@ -127,7 +140,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ],
               )),
-          color: Colors.blueGrey[800],
         ));
   }
 }
