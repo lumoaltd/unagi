@@ -1,8 +1,9 @@
 // ignore_for_file: sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:unicons/unicons.dart';
+
+import 'routing/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,17 +15,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final goRouter = GoRouter(
-      initialLocation: '/',
-      debugLogDiagnostics: true,
-      routes: [
-        GoRoute(
-          path: '/',
-          builder: (context, state) =>
-              const MyHomePage(title: 'Flutter Demo Home Page'),
-        ),
-      ],
-    );
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: goRouter,
