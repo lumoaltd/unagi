@@ -7,8 +7,11 @@ final goRouter = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      builder: (context, state) =>
-          const MyHomePage(title: 'Flutter Demo Home Page'),
+      builder: (context, state) => const MyHomePage(title: 'Unagi Home Page'),
+    ),
+    GoRoute(
+      path: '/settings',
+      builder: (context, state) => const MyHomePage(title: 'Settings'),
     ),
   ],
 );
